@@ -1,0 +1,46 @@
+---
+const projects = [
+  {
+    title: 'E-Ticaret Mikroservis Platformu',
+    description: 'Yüksek trafikli e-ticaret platformu. Mikroservis mimarisi, Docker ve Kubernetes ile geliştirildi.',
+    image: 'https://images.unsplash.com/photo-1555421689-491a97ff2040?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3',
+    tags: ['React', 'Node.js', 'Kubernetes', 'MongoDB']
+  },
+  {
+    title: 'Fintech Payment Gateway',
+    description: 'Bankalar arası ödeme sistemi. Yüksek güvenlikli ve ölçeklenebilir mimari.',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3',
+    tags: ['Node.js', 'PostgreSQL', 'Redis', 'Docker']
+  },
+  {
+    title: 'Real-time Analytics Dashboard',
+    description: 'Büyük veri analizi ve görselleştirme platformu. Real-time veri işleme ve raporlama.',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3',
+    tags: ['React', 'GraphQL', 'AWS', 'ElasticSearch']
+  }
+];
+---
+
+<section id="projects" class="py-20 bg-white">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Projeler</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map(project => (
+        <div data-aos="fade-up" class="bg-white rounded-lg overflow-hidden shadow-lg">
+          <img src={project.image} alt={project.title} class="w-full h-48 object-cover"/>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
+            <p class="text-gray-600 mb-4">{project.description}</p>
+            <div class="flex flex-wrap gap-2">
+              {project.tags.map(tag => (
+                <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
